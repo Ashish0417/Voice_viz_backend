@@ -162,7 +162,7 @@ async def get_graph_suggestions_(data: list[dict], notes: str) -> dict:
     ```
     
     REMEMBER: Focus primarily on addressing \"\"\"{notes}\"\"\" in all your analysis and recommendations.
-    NOTE: Be precise in your field selections - use exact field names from the dataset.
+    NOTE: Be precise in your field selections - use exact field names from the dataset avoid bolding and using points.
     """
     
     response = model.generate_content(prompt)
