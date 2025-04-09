@@ -3,7 +3,7 @@ from fastapi import FastAPI, HTTPException, Response
 from fastapi.responses import FileResponse
 import pandas as pd
 from pydantic import BaseModel
-from schemas import DataRequest
+from schemas import DataRequest, DataRequest1
 from gemini import get_graph_suggestions, get_graph_suggestions_
 from graph_gen import generate_graphs_zip  # <-- updated import
 import logging
@@ -71,7 +71,7 @@ class JSONData(BaseModel):
 #         raise HTTPException(status_code=500, detail=str(e))
     
 @app.post("/generate-report")
-async def generate_report_endpoint(request: DataRequest):
+async def generate_report_endpoint(request: DataRequest1):
     """Generate a PDF report with data analysis and visualizations"""
     try:
         logger.info("Received report generation request")
